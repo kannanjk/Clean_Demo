@@ -6,7 +6,7 @@ export const routes = (dependencies: DependenciesData) => {
     const routes = express.Router()
     
     const user = userRoutes(dependencies)
-
+ 
     routes.use('/user', user)
 
     return routes

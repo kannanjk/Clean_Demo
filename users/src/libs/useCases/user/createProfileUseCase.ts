@@ -1,13 +1,15 @@
 import { UserData, UserProfile } from "../../entities";
 
 export const createProfile_UseCase = (dependencies: any) => {
-    const { repository: { userRepository } } = dependencies;
+    const {
+        repository: { userRepository }
+    } = dependencies;
     if (!userRepository)
         throw new Error("the user repository should be dependencis")
 
     const execute = ({
         name,
-        email, 
+        email,
         isBlocked
     }: UserData) => {
         const userProfile = new UserProfile({ name, email, isBlocked })

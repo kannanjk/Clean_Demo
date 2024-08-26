@@ -1,6 +1,6 @@
 import { connectDB } from './config/db';
 import dotenv from 'dotenv'
-import express, { Request, Response, json } from "express";
+import express, {  json } from "express";
 import { routes } from './routes';
 import dependencies from './config/dependencies';
 

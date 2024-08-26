@@ -7,8 +7,6 @@ export = (dependencies: DependenciesData): any => {
     } = dependencies
 
     const createPrfile = async (req: Request, res: Response, next: NextFunction) => {
-        console.log("%%%^%%%%");
-        
         try {
             const { name, email, isBlocked } = req.body
             const userProfile = await createProfile_UseCase(dependencies).execute({
