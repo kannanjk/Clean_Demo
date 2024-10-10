@@ -8,10 +8,10 @@ export = (dependencies: DependenciesData): any => {
 
     const getProfile = async (req: Request, res: Response, next: NextFunction) => {
         try {
-            const { userId } = req.body
-            const userProfile = await getUserProfile_UseCase(dependencies).execute({
-                userId
-            })
+            const userId = req.body
+            const userProfile = await getUserProfile_UseCase(dependencies).execute(
+                {userId}
+            )
             if (!userProfile) {
                 res.send({
                     data: "profile not found"

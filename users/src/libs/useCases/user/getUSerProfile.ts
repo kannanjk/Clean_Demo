@@ -8,7 +8,7 @@ export const getUserProfile_UseCase = (dependencies: DependenciesData) => {
     if (!userRepository) {
         throw new Error("The user repository should be dependencie");
     }
-    const execute = ({ userId }: { userId: string }) => {
+    const execute = ({ userId }: { userId: any }) => {
         return userRepository.getUser(userId)
     }
     return { 

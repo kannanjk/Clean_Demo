@@ -9,6 +9,7 @@ export = (dependencies: DependenciesData) => {
 
     router.post('/creatProfile', createProfile)
     router.post('/getUser', getProfile)
+    // router.put('/updateUser', getProfile)
 
     return router
 }

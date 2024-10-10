@@ -1,8 +1,10 @@
 import { connectDB } from './config/db';
 import dotenv from 'dotenv'
-import express, {  json } from "express";
+import express, {  json } from "express"; 
 import { routes } from './routes';
-import dependencies from './config/dependencies';
+import dependencies from './config/dependencies'; 
+import { Publisher } from './events/publisher/userCreate';
+import { listeners } from './events/listeners/user';
 
 dotenv.config();
 
@@ -14,6 +16,8 @@ app.use(json());
 
 app.use('/api', routes(dependencies))
 
+Publisher()
+listeners()
 connectDB()
 
 app.listen(port, () => {

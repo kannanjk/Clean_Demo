@@ -11,4 +11,5 @@ export interface repositoryData {
 export interface useCaseData {
     createProfile_UseCase: any;
     getUserProfile_UseCase: any; 
+    // updateProfile_UseCase:any
 } 
